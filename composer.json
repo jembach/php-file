@@ -1,0 +1,25 @@
+{
+	"name": "jembach/php-file",
+	"description": "Class to handle file operations",
+  "type": "library",
+  "keywords": [
+    "file"
+  ],
+  "license": "GPL-3.0",
+  "version": "1.0",
+  "authors": [
+        {
+            "name": "Jonas Embach",
+            "role": "Developer"
+        }
+    ],
+  "support": {
+    "docs": "https://github.com/jembach/php-file/readme.md" 
+  },
+	"require": {
+		"php": ">=5.3.0"
+	},
+	"autoload": {
+		"files": ["file.class.php"]
+	}
+}
