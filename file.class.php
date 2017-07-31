@@ -1,17 +1,18 @@
 <?php
 
-class file {
-  protected var $modus;
-  protected var $filename;
-  protected var $filehandle;
+class fileHandler {
 
-  protected var $lastError;
+  var $modus;
+  var $filename;
+  var $filehandle;
 
-  protected var $readModi     =array("r");
-  protected var $writeModi    =array("w","a","x","c");
-  protected var $bothModi     =array("r+","w+","a+","x+","c+");
-  protected var $createModi   =array("w","a","w+","a+","x","x+","c","c+");
-  protected var $exceptionModi=array("x","x+");
+  var $lastError;
+
+  var $readModi     =array("r");
+  var $writeModi    =array("w","a","x","c");
+  var $bothModi     =array("r+","w+","a+","x+","c+");
+  var $createModi   =array("w","a","w+","a+","x","x+","c","c+");
+  var $exceptionModi=array("x","x+");
 
 
   /**
@@ -20,7 +21,7 @@ class file {
    * @param      string  $filename  The filename
    */
   public function __construct($filename,$modus="r+") {
-    $this->filename=$filename
+    $this->filename=$filename;
     if($modus!=false){
       $this->modus=$modus;
       $this->open();
@@ -74,7 +75,7 @@ class file {
       if (in_array($this->modus, $this->exceptionModi) && file_exists($this->filename)) {
         $this->lastError='in modi: '.$this->modus.' file isn\'t allowed to exists';
         return false;
-      } else if (((file_exists($this->filename)) && (!is_writeable($this->filename))) {
+      } else if ((file_exists($this->filename)) && (!is_writeable($this->filename))) {
         $this->lastError='file exists but could not be edit';
         return false;
       } else if (!is_writeable(substr($this->filename,0,strlen($this->filename)-strlen(basename($this->filename))-1))) {
@@ -323,9 +324,6 @@ class file {
       return unlink($filename,$mode);
     }
   }
-
-
-
 }
 
 ?>
