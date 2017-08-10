@@ -35,7 +35,6 @@ class fileHandler {
     If ($this->filehandle!=null) {
       $this->close();
     }
-    parent::__destruct();
   }
 
   /**
