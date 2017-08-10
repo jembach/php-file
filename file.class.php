@@ -190,7 +190,7 @@ class fileHandler {
       }
     }
     if($return=="array")
-      $text=explode($text,"\n");
+      $text=explode("\n",$text);
     return $text;
   }
 
