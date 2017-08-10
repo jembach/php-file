@@ -175,8 +175,8 @@ class fileHandler {
    * @return     boolean|string             boolean if an error occourse. 
    *                                        Content as string if no error occourse
    */
-  public function readFile($filename=false,$return="string") {
-    if($filename==false && $this->open($filename)){ //error occourse in open function
+  public function readFile($filename=false,$return="string",$mode="r") {
+    if($filename==false && $this->open($filename,$mode)){ //error occourse in open function
       return false;
     } else if($this->filehandle==null) {
       $this->lastError='no file opened';
@@ -201,8 +201,8 @@ class fileHandler {
    * @param      string   $filename  The filename
    * @return     boolean             true if file could be written
    */
-  public function writeFile($text,$filename=false) {
-    if($filename==false && $this->open($filename)){ //error occourse in open function
+  public function writeFile($text,$filename=false,$mode="r+") {
+    if($filename==false && $this->open($filename,$mode)){ //error occourse in open function
       return false;
     } else if($this->filehandle==null) {
       $this->lastError='no file opened';
