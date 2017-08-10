@@ -175,7 +175,7 @@ class fileHandler {
    *                                        Content as string if no error occourse
    */
   public function readFile($filename=false,$return="string",$mode="r") {
-    if($filename==false && $this->open($filename,$mode)){ //error occourse in open function
+    if($this->filehandle==null && $filename==false && $this->open($filename,$mode)){ //error occourse in open function
       return false;
     } else if($this->filehandle==null) {
       $this->lastError='no file opened';
