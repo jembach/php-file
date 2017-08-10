@@ -24,7 +24,7 @@ class fileHandler {
     $this->filename=$filename;
     if($modus!=false){
       $this->modus=$modus;
-      $this->open();
+      $this->open($filename,$modus);
     }
   }
 
