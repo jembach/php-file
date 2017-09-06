@@ -223,7 +223,9 @@ class fileHandler {
 /*        SOME OTHER MAGIC STUFF - BETA          */
 /*************************************************/
 
-
+  public function fileExists($path){
+    return file_exists($path);
+  }
 
 
 
